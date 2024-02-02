@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe.StartGame"
+             Title="StartGame">
+    <ScrollView>
+        <Frame BorderColor="#1d4ed8" WidthRequest="600" >
+
+            <StackLayout Spacing="20" Padding="20">
+
+                <Label Margin="0,50,0,0" Text="Tic Tac Toe"  FontFamily="Pattaya-Regular"  FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" />
+
+
+                <Label Text="Enter Dimension : " ></Label>
+                <Entry  Text="{Binding Dimension}" ></Entry>
+
+                <StackLayout RadioButtonGroup.GroupName="{Binding DifficultyLevel}"
+                    RadioButtonGroup.SelectedValue="{Binding DifficultyLevel}"  Spacing="10">
+                    <Label Text="Select difficulty level:" />
+                    <RadioButton CheckedChanged="RadioButtonEasy_CheckedChanged" Content="Easy" GroupName="DifficultyLevel" Value="Easy" />
+                    <RadioButton CheckedChanged="RadioButtonHard_CheckedChanged" Content="Hard" GroupName="DifficultyLevel" Value="Hard" />
+                </StackLayout>
+                <Button Clicked="Button_Clicked"  Text="Start Game"  BackgroundColor="#1d4ed8" TextColor="White"></Button>
+            </StackLayout>
+        </Frame>
+
+    </ScrollView>
+
+</ContentPage>
